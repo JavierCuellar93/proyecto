@@ -1,1 +1,20 @@
-<p>location-weather works!</p>
+@for(location of locations; track location) {
+    <div class="p-4 rounded border border-danger mt-3">
+        <div class="row mt-4 mb-4 justify-content-center">
+            <div class="col-md-5 ">
+                <div class="text-uppercase mb-5">Location: {{ location.zipcode }}</div>
+                <div class="text-uppercase mb-5">Current conditions: 25</div>
+                <div class="text-uppercase mb-5">Temperature: 20 c</div>
+                <div class="text-uppercase ">Max: 25 c - Min: 15 c</div>
+            </div>
+            <div class="col-md-5 text-center">
+                <img [src]="imageBaseURL" alt="">
+            </div>
+            <div class="col">
+                <button class="btn btn-sm ms-5" (click)="deleteLocation(location)">
+                    <i class="bi bi-x-circle" ></i> <!-- Bootstrap Icon -->
+                  </button>
+            </div>
+        </div>
+    </div>
+}
